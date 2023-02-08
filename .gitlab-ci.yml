@@ -1,13 +1,71 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+image: java:8-jdk
+services:
+  - postgres:13-alpine
+variables:
+  POSTGRES_DB: mabase
+  POSTGRES_HOST : localhost
+  POSTGRES_PORT : 5432
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: "postgres"
 stages:
-- test
-sast:
+  - test
+  - build
+  - deploy
+#build and test at each push
+#Audit process
+test:
   stage: test
-include:
-- template: Security/SAST.gitlab-ci.yml
+  script:
+    - echo "$CI_PIPELINE_CREATED_AT"
+    - ./gradlew -x test
+  after_script:
+    - echo "$CI_JOB_STATUS"
+    - echo "$CI_COMMIT_AUTHOR"
+# Building process
+build:
+  stage: build
+  script:
+    # To generate the war file
+    - echo "$CI_PIPELINE_CREATED_AT"
+    - ./gradlew -x test build
+    - cd build/libs
+    - ls -lh
+    - pwd
+  artifacts:
+    paths:
+      - build/libs/*.war
+  after_script:
+    - echo "$CI_JOB_STATUS"
+    - echo "$CI_COMMIT_AUTHOR"
+#deploy on uat, all push on develop
+#Deployment
+deploy:
+  image: ubuntu
+  stage: deploy
+    #environment:
+  #name: Staging
+  before_script:
+    # Setup SSH deploy keys
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    # create the .ssh directory and set permissions
+    - mkdir -m 700 -p /root/.ssh
+  script:
+    - echo "$CI_PIPELINE_CREATED_AT"
+    #- echo "$PRIVATE_KEY_DEVELOP"
+    #Add ssh key to the agent.
+    - ssh-add <(echo "$PRIVATE_KEY_DEVELOP")
+    # Move and copy konta-erp-2.0.0.war  in tomcat
+    - scp -r -p /builds/pivotechlabs/konta/konta-erp/build/libs/konta-erp-2.0.0.war red@104.154.232.34:/tmp
+    # Update the machine and create the archive_konta folder
+    #    - ssh red@104.154.232.34 " sudo apt-get update && sudo apt-get upgrade && sudo mkdir /opt/tomcat/archive_konta"
+    # Shut down tomcat; move ROOT to archive_konta; delete ROOT folder; move, rename, right konta-erp to ROOT and finally restart tomcat
+    #    - echo "$CI_JOB_STAGE"
+    - ssh red@104.154.232.34 " sudo /opt/tomcat/bin/shutdown.sh && sudo mv /opt/tomcat/webapps/ROOT.war /opt/tomcat/archive_konta/`date +%s`_ROOT.war && sudo rm -r /opt/tomcat/webapps/ROOT && sudo mv /tmp/konta-erp-2.0.0.war /opt/tomcat/webapps/ROOT.war && sudo chmod 755 /opt/tomcat/webapps/ROOT.war && sudo /opt/tomcat/bin/startup.sh "
+    #only:
+    # - dev
+  after_script:
+    - echo "$CI_JOB_STATUS"
+    - echo "$CI_COMMIT_AUTHOR"
