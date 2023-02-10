@@ -587,4 +587,24 @@
     <option value="3">Partner</option>
   </selection>
 
+  <selection name="company.businesstype.select">
+    <option value="1">MOYENNE OU GRANDE ENTREPRISE</option>
+    <option value="2">PETITE OU MICRO ENTREPRISE</option>
+    <!--<option value="3">PERSONNE PHYSIQUE</option>-->
+  </selection>
+
+  <selection name="company.taxregime.select">
+    <option value="Régime réel">Régime réel</option>
+    <option value="TPS">TPS</option>
+  </selection>
+
+  <selection name="product.taxgroup.select">
+    <option value="A">Produit ou prestation exonérés de toutes Taxes</option>
+    <option value="B">Produit ou prestation assujettis à la TVA</option>
+    <option value="C">Exportation de produit ou de marchandises</option>
+    <option value="D">Produit assujetti au régime d’exception</option>
+    <option value="E">Entreprise assujettie au régime TPS</option>
+    <option value="F">Groupe de taxation réservé</option>
+  </selection>
+
 </object-views>
