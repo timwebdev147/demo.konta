@@ -106,6 +106,19 @@ public interface InvoicePrintService {
       throws AxelorException;
 
   /**
+   * Print an invoice, then save the generated file in this invoice. Normal report invoice.rptdesign
+   *
+   * @param invoice an invoice
+   * @param format
+   * @param reportType
+   * @param locale
+   * @return a metafile of the invoice printing.
+   * @throws AxelorException
+   */
+  File printAndSaveNormalInvoice(Invoice invoice, Integer reportType, String format, String locale)
+          throws AxelorException;
+
+  /**
    * Print a list of invoices in the same output.
    *
    * @param ids ids of the invoice.
@@ -127,4 +140,17 @@ public interface InvoicePrintService {
    */
   ReportSettings prepareReportSettings(
       Invoice invoice, Integer reportType, String format, String locale) throws AxelorException;
+
+  /**
+   * Prepare report settings for one invoice. Normal report invoice.rptdesign
+   *
+   * @param invoice an invoice
+   * @param reportType
+   * @param format
+   * @param locale
+   * @return the report settings to print the given invoice
+   * @throws AxelorException
+   */
+  ReportSettings prepareReportSettingsNormalInvoice(
+          Invoice invoice, Integer reportType, String format, String locale) throws AxelorException;
 }

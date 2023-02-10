@@ -19,6 +19,7 @@
     <field name="productFamily" form-view="product-family-form"
       grid-view="product-family-grid"/>
     <field name="productTypeSelect" width="100"/>
+    <field name="taxGroup" width="100"/>
     <field name="salePrice" x-scale="2"/>
     <field name="unit" width="70" form-view="unit-form" grid-view="unit-grid"/>
     <field name="internalDescription" widget="html" width="400"/>
@@ -137,6 +138,9 @@
           <field name="inAti" colSpan="6"
             onChange="action-product-attrs-change-title-based-on-inAti"/>
           <field name="expense" hidden="true" if-module="axelor-human-resource"/>
+        </panel>
+        <panel name="taxgroup" colSpan="12">
+          <field name="taxGroup" title="Groupe de Taxe" selection="product.taxgroup.select" colSpan="6" />
         </panel>
         <panel name="BarcodePanel" readonlyIf="barCode != null"
           if="__config__.app.getApp('base').getActivateBarCodeGeneration()" title="Barcode"
@@ -489,6 +493,7 @@
     <field name="salePrice" x-scale="2"/>
     <field name="saleCurrency.symbol"/>
     <field name="productFamily"/>
+    <field name="taxGroup" />
     <field name="productCategory"/>
     <field name="internalDescription"/>
     <field name="configurator.id"/>
@@ -541,6 +546,7 @@
     <action name="action-product-attrs-title-unit"/>
     <action name="action-product-attrs-enable-product-company-list"/>
     <action name="action-product-record-service-stock-managed"/>
+    <action name="action-product-record-taxgroup"/>
     <action name="action-product-attrs-set-cost-type-select"/>
   </action-group>
 
@@ -581,6 +587,7 @@
     <action name="action-product-attrs-readonly-purchasable" if="__context__?._fromPurchase"/>
     <action name="action-product-attrs-cost-price-variant"/>
     <action name="action-product-attrs-enable-product-company-list"/>
+    <action name="action-product-record-taxgroup"/>
     <action name="action-product-attrs-set-cost-type-select"/>
   </action-group>
 
@@ -695,6 +702,10 @@
     <field name="managPriceCoef" expr="1"/>
     <field name="isModel" expr="eval: _isModel"/>
     <field name="isShippingCostsProduct" expr="eval: _isShippingCostsProduct"/>
+  </action-record>
+
+  <action-record name="action-product-record-taxgroup" model="com.axelor.apps.base.db.Product">
+    <field name="taxGroup" expr="eval: taxGroup"/>
   </action-record>
 
   <action-record name="action-product-record-product-sub-type-select-onchange"

@@ -25,4 +25,9 @@ dependencies {
 	implementation libs.ical4j
 	implementation libs.iban4j
 	testImplementation libs.mockito
+
+	implementation 'com.squareup.okhttp3:okhttp:4.3.1'
+	implementation 'org.json:json:20171018'
+	implementation 'com.google.code.gson:gson:2.8.2'
+	implementation 'com.google.zxing:core:3.2.0'
 }
