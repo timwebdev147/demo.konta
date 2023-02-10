@@ -10,7 +10,7 @@ variables:
 stages:
   - test
   - build
-  - deploy
+# - deploy
 #build and test at each push
 #Audit process
 test:
