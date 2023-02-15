@@ -68,4 +68,4 @@ deploy:
     # - dev
   after_script:
     - echo "$CI_JOB_STATUS"
-    - echo "$CI_COMMIT_AUTHOR"
+  #  - echo "$CI_COMMIT_AUTHOR"
