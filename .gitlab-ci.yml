@@ -2,11 +2,11 @@ image: java:8-jdk
 services:
   - postgres:13-alpine
 variables:
-  POSTGRES_DB: konta-erp
+  POSTGRES_DB: konta_erp
   POSTGRES_HOST : localhost
   POSTGRES_PORT : 5432
   POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: "konta@123#$"
+  POSTGRES_PASSWORD: "postgres"
 stages:
   - test
   - build
@@ -42,7 +42,7 @@ build:
 deploy:
   image: ubuntu
   stage: deploy
-    #environment:
+  #environment:
   #name: Staging
   before_script:
     # Setup SSH deploy keys
@@ -58,14 +58,16 @@ deploy:
     #Add ssh key to the agent.
     - ssh-add <(echo "$PRIVATE_KEY_DEVELOP")
     # Move and copy konta-erp-2.0.0.war  in tomcat
-    - scp -r -p /builds/pivotechlabs/konta/konta-erp/build/libs/konta-erp-2.0.0.war kontauser@4.246.211.231:/tmp
+    - scp -r -p /builds/konta/erp/build/libs/axelor-erp-6.0.31.war kontauser@20.235.122.255:/tmp
     # Update the machine and create the archive_konta folder
-    #    - ssh kontauser@4.246.211.231 " sudo apt-get update && sudo apt-get upgrade && sudo mkdir /opt/tomcat/archive_konta"
+    #    - ssh red@104.154.232.34 " sudo apt-get update && sudo apt-get upgrade && sudo mkdir /opt/tomcat/archive_konta"
     # Shut down tomcat; move ROOT to archive_konta; delete ROOT folder; move, rename, right konta-erp to ROOT and finally restart tomcat
     #    - echo "$CI_JOB_STAGE"
-    - ssh kontauser@4.246.211.231 " sudo /opt/tomcat/bin/shutdown.sh && sudo mv /opt/tomcat/webapps/ROOT.war /opt/tomcat/archive_konta/`date +%s`_ROOT.war && sudo rm -r /opt/tomcat/webapps/ROOT && sudo mv /tmp/konta-erp-2.0.0.war /opt/tomcat/webapps/ROOT.war && sudo chmod 755 /opt/tomcat/webapps/ROOT.war && sudo systemctl start tomcat "
+    - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo mv /opt/tomcat/webapps/ROOT.war /opt/tomcat/archive_konta/`date +%s`_ROOT.war && sudo rm -r /opt/tomcat/webapps/ROOT && sudo mv /tmp/axelor-erp-6.0.31.war /opt/tomcat/webapps/ROOT.war && sudo chmod 755 /opt/tomcat/webapps/ROOT.war && sudo /opt/tomcat/bin/startup.sh && sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
+    #shutdown and start tomcat
+    - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
     #only:
     # - dev
   after_script:
     - echo "$CI_JOB_STATUS"
-  #  - echo "$CI_COMMIT_AUTHOR"
+    - echo "$CI_COMMIT_AUTHOR"
