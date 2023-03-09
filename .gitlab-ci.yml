@@ -66,7 +66,7 @@ deploy:
     #sudo /opt/tomcat/bin/shutdown.sh &&
 
     #&& sudo /opt/tomcat/bin/startup.sh &&  sudo /opt/tomcat/bin/shutdown.sh
-    - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo mv /opt/tomcat/webapps/ROOT.war /opt/tomcat/archive_konta/`date +%s`_ROOT.war && sudo rm -r /opt/tomcat/webapps/ROOT && sudo mv /tmp/axelor-erp-6.0.31.war /opt/tomcat/webapps/ROOT.war && sudo chmod 755 /opt/tomcat/webapps/ROOT.war && sudo /opt/tomcat/bin/startup.sh && sudo /opt/tomcat/bin/startup.sh && sudo systemctl restart tomcat.service"
+    - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo mv /opt/tomcat/webapps/ROOT.war /opt/tomcat/archive_konta/`date +%s`_ROOT.war && sudo rm -r /opt/tomcat/webapps/ROOT && sudo mv /tmp/axelor-erp-6.0.31.war /opt/tomcat/webapps/ROOT.war && sudo chmod 755 /opt/tomcat/webapps/ROOT.war && sudo /opt/tomcat/bin/startup.sh && sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
     #only:
     # - dev
   after_script:
