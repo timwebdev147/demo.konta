@@ -1,0 +1,9 @@
+"fiscalPosition_code";"fromTax_code";"toTax_code"
+"UE";"N_C";"UE_X_C"
+"UE";"X_C";"UE_X_C"
+"IE";"X_C";"EXP_X_C"
+"IE";"X_D";"IMP_X_D"
+"UE";"X_D";"IMP_X_D"
+"UE";"N_D";"UE_N_D"
+"IE";"N_D";"IMP_X_D"
+
