@@ -1,0 +1,74 @@
+image: java:8-jdk
+services:
+  - postgres:13-alpine
+variables:
+  POSTGRES_DB: konta_erp
+  POSTGRES_HOST : localhost
+  POSTGRES_PORT : 5432
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: "postgres"
+stages:
+  - test
+  - build
+  - deploy
+#build and test at each push
+#Audit process
+test:
+  stage: test
+  script:
+    - echo "$CI_PIPELINE_CREATED_AT"
+    - ./gradlew -x test
+  after_script:
+    - echo "$CI_JOB_STATUS"
+    - echo "$CI_COMMIT_AUTHOR"
+# Building process
+build:
+  stage: build
+  script:
+    # To generate the war file
+    - echo "$CI_PIPELINE_CREATED_AT"
+    - ./gradlew -x test build
+    - cd build/libs
+    - ls -lh
+    - pwd
+  artifacts:
+    paths:
+      - build/libs/*.war
+  after_script:
+    - echo "$CI_JOB_STATUS"
+    - echo "$CI_COMMIT_AUTHOR"
+#deploy on uat, all push on develop
+#Deployment
+deploy:
+  image: ubuntu
+  stage: deploy
+  #environment:
+  #name: Staging
+  before_script:
+    # Setup SSH deploy keys
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    # create the .ssh directory and set permissions
+    - mkdir -m 700 -p /root/.ssh
+  script:
+    - echo "$CI_PIPELINE_CREATED_AT"
+    #- echo "$PRIVATE_KEY_DEVELOP"
+    #Add ssh key to the agent.
+    - ssh-add <(echo "$PRIVATE_KEY_DEVELOP")
+    # Move and copy konta-erp-2.0.0.war  in tomcat
+    - scp -r -p /builds/konta/erp/build/libs/axelor-erp-6.0.31.war kontauser@20.235.122.255:/tmp
+    # Update the machine and create the archive_konta folder
+    #    - ssh red@104.154.232.34 " sudo apt-get update && sudo apt-get upgrade && sudo mkdir /opt/tomcat/archive_konta"
+    # Shut down tomcat; move ROOT to archive_konta; delete ROOT folder; move, rename, right konta-erp to ROOT and finally restart tomcat
+    #    - echo "$CI_JOB_STAGE"
+    - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo mv /opt/tomcat/webapps/ROOT.war /opt/tomcat/archive_konta/`date +%s`_ROOT.war && sudo rm -r /opt/tomcat/webapps/ROOT && sudo mv /tmp/axelor-erp-6.0.31.war /opt/tomcat/webapps/ROOT.war && sudo chmod 755 /opt/tomcat/webapps/ROOT.war && sudo /opt/tomcat/bin/startup.sh && sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
+    #shutdown and start tomcat
+    - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
+    only:
+      refs:
+       - dev
+  after_script:
+    - echo "$CI_JOB_STATUS"
+    - echo "$CI_COMMIT_AUTHOR"
