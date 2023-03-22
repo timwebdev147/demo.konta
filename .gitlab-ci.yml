@@ -67,8 +67,7 @@ deploy:
     #shutdown and start tomcat
     - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
     only:
-      refs:
-       - dev
+      - dev
   after_script:
     - echo "$CI_JOB_STATUS"
     - echo "$CI_COMMIT_AUTHOR"
