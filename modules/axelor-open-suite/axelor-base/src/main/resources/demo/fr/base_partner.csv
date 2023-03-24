@@ -1,70 +1,70 @@
-"importId";"partnerTypeSelect";"isContact";"isCustomer";"isSupplier";"isEmployee";"name";"firstName";"titleSelect";"languageCode";"address";"email";"fixedPhone";"mobilePhone";"invoiceSendingFormatSelect";"paymentMode.importId";"paymentCondition.importId";"partnerCategory.code";"currency.code";"blocking.importId";"rejectCounter";"companySet_importId";"customerAccount_code";"supplierAccount_code";"mainPartner_importId";"customerTypeSelect";"supplierTypeSelect";"industrySector.importId";"user.importId";"team.importId";"source.id";"fiscalPosition.importId";"picture_fileName";"invoicesCopySelect"
-20;1;"false";"true";"true";"false";"APOLLO";;;"fr";62;"info@apollo.fr";"04.35.79.88.99";;"emailpaper";8;6;"SME";"EUR";;;1;411100;401100;;3;1;4;11;2;5;;"img//partner/20_120px.png";1
-21;2;"true";"false";"false";"false";"MICHEL";"Loic";1;"fr";62;"l.michel@apollo.fr";"04.31.45.39.99";"06.41.66.37.99";;;;;;;;1;;;20;;;;;;;;"img//partner/1033_128px.png";2
-22;2;"true";"false";"false";"false";"GARCIA";"Daniel";1;"fr";62;"d.garcia@apollo.fr";"04.19.14.89.99";"06.89.42.54.99";;;;;;;;1;;;20;;;;;;;;"img//partner/1033_128px.png";1
-23;2;"true";"false";"false";"false";"DAVID";"Laurent";1;"fr";62;"l.david@apollo.fr";"04.73.26.45.99";"07.95.48.27.99";;;;;;;;1;;;20;;;;;;;;"img//partner/1033_128px.png";2
-44;1;"false";"true";"true";"false";"BLUEBERRY TELECOM";;;"fr";13002;"info@blueberry-telecom.fr";"04.73.67.88.99";;"emailpaper";8;6;"SME";"EUR";;;1;411100;401100;;3;1;22;11;2;7;;"img//partner/44_120px.png";1
-45;2;"true";"false";"false";"false";"ROUSSEAU";"Élisabeth";2;"fr";13001;"e.rousseau@blueberry-telecom.fr";"04.86.61.79.99";"06.14.62.29.99";;;;;;;;1;;;44;;;;;;;;"img//partner/1012_128px.png";2
-46;2;"true";"false";"false";"false";"BLANC";"Bernard";1;"fr";13001;"b.blanc@blueberry-telecom.fr";"04.32.13.60.99";"07.83.63.98.99";;;;;;;;1;;;44;;;;;;;;"img//partner/1033_128px.png";1
-70;1;"false";"true";"true";"false";"MASSON SA";;;"fr";311;"contact@masson.fr";"05.44.40.54.99";;"emailpaper";6;2;"SME";"EUR";;;1;411100;401100;;1;2;21;;;3;;"img//partner/70_120px.png";2
-71;2;"true";"false";"false";"false";"MASSON";"Xavier";1;"fr";311;"x.masson@masson.fr";"05.15.60.89.99";"07.76.18.65.99";;;;;;;;1;;;70;;;;;;;;"img//partner/1033_128px.png";1
-72;2;"true";"false";"false";"false";"SANCHEZ";"Catherine";2;"fr";311;"c.sanchez@masson.fr";"05.27.69.43.99";"07.59.17.99.99";;;;;;;;1;;;70;;;;;;;;"img//partner/1012_128px.png";2
-77;1;"false";"true";"true";"false";"GERARD Solutions";;;"fr";330;"contact@gerard-solutions.fr";"05.22.62.48.99";;"emailpaper";8;2;"SME";"EUR";;;1;411100;401100;;2;1;4;12;2;12;;"img//partner/77_128px.png";1
-78;2;"true";"false";"false";"false";"GERARD";"Fabrice";1;"fr";330;"f.gerard@gerard-solutions.fr";"05.12.44.47.99";"06.90.75.97.99";;;;;;;;1;;;77;;;;;;;;"img//partner/1033_128px.png";2
-79;2;"true";"false";"false";"false";"NGUYEN";"Xavier";1;"fr";330;"x.nguyen@gerard-solutions.fr";"05.57.53.68.99";"06.97.90.53.99";;;;;;;;1;;;77;;;;;;;;"img//partner/1033_128px.png";1
-88;1;"false";"true";"true";"false";"123 Services";;;"fr";590;"contact@123-services.fr";"03.35.52.63.99";;"emailpaper";6;2;"SME";"EUR";;;1;411100;401100;;3;2;7;9;1;1;;"img//partner/88_120px.png";2
-89;2;"true";"false";"false";"false";"ROGER";"Jean Marc";1;"fr";590;"j.roger@123-services.fr";"03.83.87.87.99";"06.75.77.83.99";;;;;;;;1;;;88;;;;;;;;"img//partner/1033_128px.png";1
-90;2;"true";"false";"false";"false";"ROCHE";"Dominique";1;"fr";590;"d.roche@123-services.fr";"03.47.63.91.99";"07.42.32.10.99";;;;;;;;1;;;88;;;;;;;;"img//partner/1033_128px.png";2
-91;2;"true";"false";"false";"false";"ROY";"Thierry";1;"fr";590;"t.roy@123-services.fr";"03.50.79.78.99";"06.64.23.62.99";;;;;;;;1;;;88;;;;;;;;"img//partner/1033_128px.png";1
-132;1;"false";"true";"true";"false";"BOURGEOIS INDUSTRIE";;;"fr";940;"info@bourgeois-industries.fr";"01.97.37.77.99";;"emailpaper";6;2;"SME";"EUR";;;1;411100;401100;;2;1;17;8;3;2;;"img//partner/132_120px.png";2
-133;2;"true";"false";"false";"false";"BOURGEOIS";"Luc";1;"fr";940;"l.bourgeois@bourgeois-industries.fr";"01.42.72.29.99";"06.86.42.41.99";;;;;;;;1;;;132;;;;;;;;"img//partner/1033_128px.png";1
-134;2;"true";"false";"false";"false";"ARAFI";"Zohra";2;"fr";940;"z.arafi@bourgeois-industries.fr";"01.72.29.71.99";"06.43.52.92.99";;;;;;;;1;;;132;;;;;;;;"img//partner/1012_128px.png";2
-135;2;"true";"false";"false";"false";"CHARLES";"Jeannot";1;"fr";940;"j.charles@bourgeois-industries.fr";"01.87.59.46.99";"07.72.53.10.99";;;;;;;;1;;;132;;;;;;;;"img//partner/1033_128px.png";1
-136;1;"false";"true";"true";"false";"ESL Banking";;;"fr";950;"contact@esl-banking.fr";"01.38.33.50.99";;"emailpaper";6;2;"SME";"EUR";;;1;411100;401100;;2;1;2;8;3;5;;"img//partner/136_120px.png";2
-137;2;"true";"false";"false";"false";"GUILLOT";"Kévin";1;"fr";950;"k.guillot@esl-banking.fr";"01.73.34.26.99";"06.63.55.39.99";;;;;;;;1;;;136;;;;;;;;"img//partner/1033_128px.png";1
-138;2;"true";"false";"false";"false";"NOEL";"Jean Nicolas";1;"fr";950;"j.noel@esl-banking.fr";"01.13.96.92.99";"07.44.77.73.99";;;;;;;;1;;;136;;;;;;;;"img//partner/1033_128px.png";2
-139;2;"true";"false";"false";"false";"MEUNIER";"Paul";1;"fr";950;"p.meunier@esl-banking.fr";"01.22.82.15.99";"07.67.21.50.99";;;;;;;;1;;;136;;;;;;;;"img//partner/1033_128px.png";1
-148;1;"false";"true";"true";"false";"TOP Components";;;"en";2004;"contact@top-components.com";"+86 21 5198 9999";;"emailpaper";8;5;"SME";"USD";;;1;411100;401100;;1;2;9;;;5;2;"img//partner/148_128px.png";2
-149;2;"true";"false";"false";"false";"ZHANG";"Annie";2;"en";2004;"a.zhang@top-components.com";"+86 21 5198 9999";"+86 139 1658 8799";;;;;;;;1;;;148;;;;;;;;"img//partner/1012_128px.png";1
-152;1;"false";"true";"true";"false";"SILVER Electronics";;;"en";2006;"contact@silverelec.com";"+86 755 8396 9999";;"emailpaper";8;5;"SME";"USD";;;1;411100;401100;;1;2;9;;;2;2;"img//partner/152_128px.png";2
-153;2;"true";"false";"false";"false";"LI";"Yang";1;"en";2006;"y.li@silverelec.com";"+86 755 8396 9999";"+86 138 2479 7599";;;;;;;;1;;;152;;;;;;;;"img//partner/1033_128px.png";1
-170;1;"false";"true";"true";"false";"SASAKI Components";;;"en";6001;"info@sasaki-components.com";"+81 3 5850 9999";;"emailpaper";8;5;"SME";"USD";;;1;411100;401100;;1;2;16;;;12;2;"img//partner/170_128px.png";2
-171;2;"true";"false";"false";"false";"SASAKI";"Amaya";1;"en";6001;"a.sasaki@sasaki-components.com";"+81 3 5850 9999";"+81 90 5136 7506";;;;;;;;1;;;170;;;;;;;;"img//partner/1012_128px.png";1
-185;1;"false";"true";"true";"false";"DE KIMPE Engineering";;;"en";1002;"contact@dekimpe-eng.com";"+32 2 234 99 99";;"emailpaper";8;5;"SME";"EUR";;;1;411100;401100;;1;2;3;;;8;1;"img//partner/185_120px.png";2
-186;2;"true";"false";"false";"false";"DE KIMPE";"Joos";1;"en";1002;"j.de kimpe@dekimpe-eng.com";"+32 2 234 99 99";32495680999;;;;;;;;1;;;185;;;;;;;;"img//partner/1033_128px.png";1
-197;1;"false";"true";"true";"false";"DG Technologies";;;"en";8002;"info@dg-technologies.com";"+31 20 530 79 99";;"emailpaper";8;5;"SME";"EUR";;;1;411100;401100;;2;1;16;13;3;10;1;"img//partner/197_120px.png";2
-198;2;"true";"false";"false";"false";"DE GROOT";"Matthijs";1;"en";8002;"m.de groot@dg-technologies.com";"+31 20 530 79 99";"+31 (0)6 51 59 69 99";;;;;;;;1;;;197;;;;;;;;"img//partner/1033_128px.png";1
-205;1;"false";"true";"true";"false";"AZ Inno";;;"en";3002;"info@azinno.com";"+49 89 17301999";;"emailpaper";8;5;"SME";"EUR";;;1;411100;401100;;2;1;7;13;3;1;1;"img//partner/205_120px.png";2
-206;2;"true";"false";"false";"false";"MULLER";"Jan";1;"en";3002;"j.muller@azinno.com";"+49 89 17301999";"+49 175 5440999";;;;;;;;1;;;205;;;;;;;;"img//partner/1033_128px.png";1
-224;1;"false";"true";"true";"false";"WM Cinetics";;;"en";10010;"contact@wm-cinetics.com";"+1 415 490 2999";;"emailpaper";8;5;"SME";"USD";;;1;411100;401100;;2;1;17;13;3;6;2;"img//partner/224_128px.png";2
-225;2;"true";"false";"false";"false";"WILSON";"Charles";1;"en";10010;"c.wilson@wm-cinetics.com";"+1 415 490 2999";"+1 415 780 2999";;;;;;;;1;;;224;;;;;;;;"img//partner/1033_128px.png";1
-237;1;"false";"true";"true";"false";"TGM Consulting";;;"fr";75001;"info@tgm-consulting.com";"01.73.66.77.99";;"emailpaper";8;5;"SME";"EUR";;;1;411100;401100;;1;2;13;8;3;7;2;"img//partner/237_128px.png";2
-238;2;"true";"false";"false";"false";"THOMPSON";"Kenneth";1;"en";75001;"k.thompson@tgm-consulting.com";"01.73.66.77.99";;;;;;;;;1;;;237;;;;;;;;"img//partner/1033_128px.png";1
-239;2;"true";"false";"false";"false";"GARCIA";"Steven";1;"en";75001;"s.garcia@tgm-consulting.com";"01.73.66.77.99";;;;;;;;;1;;;237;;;;;;;;"img//partner/1033_128px.png";2
-240;2;"true";"false";"false";"false";"MARTINEZ";"Edward";1;"en";10019;"e.martinez@tgm-consulting.com";"01.73.66.77.99";;;;;;;;;1;;;237;;;;;;;;"img//partner/1033_128px.png";1
-1012;2;"false";"true";"true";"false";"PICARD";"Anna";2;"fr";671;"a.picard@msn.com";"03.79.67.80.99";"06.45.25.47.99";"email";4;2;"INDIV";"EUR";;;1;411100;401100;;2;;;9;1;8;;"img//partner/1012_128px.png";2
-1033;2;"false";"true";"true";"false";"MEYER";"Philippe";1;"fr";75019;"p.meyer@yahoo.com";"01.52.66.34.99";"07.31.30.96.99";"email";5;2;"INDIV";"EUR";;;1;411100;401100;;2;;;8;3;9;;"img//partner/1033_128px.png";1
-1039;2;"false";"true";"true";"false";"MITCHELL";"Sandra";2;"en";4008;"s.mitchell@yahoo.com";"+44 151 227 8999";;"email";8;5;"INDIV";"USD";;;1;411100;401100;;2;;;13;3;12;2;"img//partner/1039_128px.png";2
-1045;2;"false";"true";"true";"false";"PARKER";"Laura";2;"en";10027;"l.parker@msn.com";"+1 305 507 7799";;"email";8;5;"INDIV";"USD";;;1;411100;401100;;2;;;13;3;11;2;"img//partner/1045_128px.png";1
-90000;1;"false";"true";"true";"false";"Axelor";;;"fr";90000;"info@axelor.com";"01.83.64.06.50";;"emailpaper";6;6;"SME";"EUR";;;1;411100;401100;;1;1;;;;;;"img//partner/90000_128px.png";2
-90001;2;"true";"false";"false";"true";"MARQUES";"Yoann";1;"fr";90000;"y.marques@axelor.com";"01.10.79.99.70";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";1
-90002;2;"true";"false";"false";"true";"ROBERT";"Lucy";2;"fr";90000;"l.robert@axelor.com";"01.10.79.99.71";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1012_128px.png";2
-90003;2;"true";"false";"false";"true";"RICHARD";"Lucas";1;"fr";90000;"l.richard@axelor.com";"01.10.79.99.72";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";1
-90004;2;"true";"false";"false";"true";"SILVA";"Daniel";1;"fr";90000;"d.silva@axelor.com";"01.10.79.99.76";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";2
-90005;2;"true";"false";"false";"true";"MARTIN";"Charles";1;"fr";90000;"c.martin@axelor.com";"01.10.79.99.78";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";1
-90006;2;"true";"false";"false";"true";"DEMOERP";"Kevin";1;"fr";90000;"k.demoerp@axelor.com";"01.10.79.99.76";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";2
-90007;2;"true";"false";"false";"true";"DEMOCRM";"Charles";1;"fr";90001;"c.democrm@axelor.com";"01.10.79.99.77";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";1
-90008;2;"true";"false";"false";"true";"RAYMOND";"Tony";1;"fr";90003;"t.raymond@axelor.com";"01.10.79.99.78";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";2
-90009;2;"true";"false";"false";"true";"LAMY";"Thomas";1;"fr";90002;"t.lamy@axelor.com";"01.10.79.99.79";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";1
-90010;2;"true";"false";"false";"true";"GIRAULT";"Anne";2;"fr";90004;"a.girault@axelor.com";"01.10.79.99.80";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1012_128px.png";2
-90011;2;"true";"false";"false";"true";"GEOFFROY";"Dimitri";1;"fr";90000;"d.geoffroy@axelor.com";"01.10.79.99.81";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";1
-90012;2;"true";"false";"false";"true";"DAVID";"Alex";1;"fr";90000;"a.david@axelor.com";"01.10.79.99.82";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";2
-90013;2;"true";"false";"false";"true";"ANDRE";"William";1;"fr";90000;"w.andre@axelor.com";"01.10.79.99.83";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";1
-90014;2;"true";"false";"false";"true";"MAURIN";"David";1;"fr";90000;"d.maurin@axelor.com";"01.10.79.99.86";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";2
-90015;2;"true";"false";"false";"true";"MARCHAL";"Cyril";1;"fr";90000;"c.marchal@axelor.com";"01.10.79.99.87";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";1
-90016;2;"true";"false";"false";"true";"COSTA";"Robin";1;"fr";90000;"r.costa@axelor.com";"01.10.79.99.88";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1033_128px.png";2
-90017;2;"true";"false";"false";"true";"COLIN";"Romane";2;"fr";90000;"r.colin@axelor.com";"01.10.79.99.89";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1012_128px.png";1
-90018;2;"true";"false";"false";"true";"LOUIS";"Victoria";2;"fr";90000;"v.louis@axelor.com";"01.10.79.99.90";;;;;;;;;1;;;90000;;;;;;;;"img//partner/1012_128px.png";2
-90019;2;"true";"false";"false";"false";"Admin";;2;"fr";90000;;"01.10.79.99.90";;;;;;;;;1;;;;;;;;;;;"img/partner/1012_128px.png";2
-90020;2;"true";"false";"false";"false";"Demo";;2;"fr";90000;;"01.10.79.99.90";;;;;;;;;1;;;;;;;;;;;"img/partner/1012_128px.png";2
-90021;1;"false";"false";"false";"false";"IFactor";"IFactor";;"fr";90000;"info@ifactor.com";"01.10.79.99.91";;"emailpaper";8;6;"SME";"EUR";;;1;411100;401100;;3;1;22;11;2;7;;;
+importId;partnerTypeSelect;isContact;isCustomer;isSupplier;isEmployee;name;firstName;titleSelect;languageCode;address;email;fixedPhone;mobilePhone;invoiceSendingFormatSelect;paymentMode.importId;paymentCondition.importId;partnerCategory.code;currency.code;blocking.importId;rejectCounter;companySet_importId;customerAccount_code;supplierAccount_code;mainPartner_importId;customerTypeSelect;supplierTypeSelect;industrySector.importId;user.importId;team.importId;source.id;fiscalPosition.importId;picture_fileName;invoicesCopySelect
+20;1;FALSE;TRUE;TRUE;FALSE;APOLLO;;;fr;229;info@apollo.fr;+229 23 41 56 78;+229 66 45 67 43;emailpaper;8;6;SME;XOF;;;1;411100;401100;;3;1;4;11;2;5;;img//partner/20_120px.png;1
+21;2;TRUE;FALSE;FALSE;FALSE;MICHEL;Loic;1;fr;229;l.michel@apollo.fr;+229 23 45 98 89;+229 65 57 89 04;;;;;;;;1;;;20;;;;;;;;img//partner/1033_128px.png;2
+22;2;TRUE;FALSE;FALSE;FALSE;GARCIA;Daniel;1;fr;229;d.garcia@apollo.fr;+229 23 45 63 78;+229 95 46 78 94;;;;;;;;1;;;20;;;;;;;;img//partner/1033_128px.png;1
+23;2;TRUE;FALSE;FALSE;FALSE;DAVID;Laurent;1;fr;229;l.david@apollo.fr;+229 23 25 67 89;+229 95 87 57 89;;;;;;;;1;;;20;;;;;;;;img//partner/1033_128px.png;2
+44;1;FALSE;TRUE;TRUE;FALSE;BLUE TELECOM;;;fr;229;info@blue-telecom.fr;+229 23 87 67 65;+229 94 56 73 89;emailpaper;8;6;SME;XOF;;;1;411100;401100;;3;1;22;11;2;7;;img//partner/44_120px.png;1
+45;2;TRUE;FALSE;FALSE;FALSE;TENAKA;Elisabeth;2;fr;229;e.tenaka@blue-telecom.fr;+229 23 43 56 09;+229 97 78 90 45;;;;;;;;1;;;44;;;;;;;;img//partner/1012_128px.png;2
+46;2;TRUE;FALSE;FALSE;FALSE;MONRA;Enock;1;fr;229;e.monra@blue-telecom.fr;+229 23 53 46 78;+229 97 89 04 56;;;;;;;;1;;;44;;;;;;;;img//partner/1033_128px.png;1
+70;1;FALSE;TRUE;TRUE;FALSE;MASSON SA;;;fr;229;contact@masson.fr;+229 23 53 64 78;+229 66 57 89 09;emailpaper;6;2;SME;XOF;;;1;411100;401100;;1;2;21;;;3;;img//partner/70_120px.png;2
+71;2;TRUE;FALSE;FALSE;FALSE;TOHON;Xavier;1;fr;229;x.tohon@masson.fr;+229 23 43 45 67;+229 65 46 78 09;;;;;;;;1;;;70;;;;;;;;img//partner/1033_128px.png;1
+72;2;TRUE;FALSE;FALSE;FALSE;SOSSOUHI;Catherine;2;fr;229;c.sossouhi@masson.fr;+229 23 43 56 78;+229 67 89 09 89;;;;;;;;1;;;70;;;;;;;;img//partner/1012_128px.png;2
+77;1;FALSE;TRUE;TRUE;FALSE;AMOUSSA Solutions COM;;;fr;229;contact@amoussa-solutions.fr;+229 23 24 71 67;+229 64 56 47 00;emailpaper;8;2;SME;XOF;;;1;411100;401100;;2;1;4;12;2;12;;img//partner/77_128px.png;1
+78;2;TRUE;FALSE;FALSE;FALSE;Da-SILVA;Fabrice;1;fr;229;f.dasilva@amoussa-solutions.fr;+229 23 00 98 78;+229 64 34 56 78;;;;;;;;1;;;77;;;;;;;;img//partner/1033_128px.png;2
+79;2;TRUE;FALSE;FALSE;FALSE;MISSIMAOU;Marie;1;fr;229;m.missimaou@amoussa-solutions.fr;+229 23 52 56 98;+229 90 88 78 64;;;;;;;;1;;;77;;;;;;;;img//partner/1033_128px.png;1
+88;1;FALSE;TRUE;TRUE;FALSE;123 Services;;;fr;229;contact@123-services.fr;+229 23 42 87 78;+229 66 47 89 64;emailpaper;6;2;SME;XOF;;;1;411100;401100;;3;2;7;9;1;1;;img//partner/88_120px.png;2
+89;2;TRUE;FALSE;FALSE;FALSE;SODJAN;Amelia;1;fr;229;a.sodjan@123-services.fr;+229 23 42 56 89;+229 66 78 89 04;;;;;;;;1;;;88;;;;;;;;img//partner/1033_128px.png;1
+90;2;TRUE;FALSE;FALSE;FALSE;PADONOU;Dominique;1;fr;229;d.padonou@123-services.fr;+229 23 42 56 89;+229 66 45 67 84;;;;;;;;1;;;88;;;;;;;;img//partner/1033_128px.png;2
+91;2;TRUE;FALSE;FALSE;FALSE;LEGBA;Thierry;1;fr;229;t.legba@123-services.fr;+229 23 54 67 87;+229 66 56 74 89;;;;;;;;1;;;88;;;;;;;;img//partner/1033_128px.png;1
+132;1;FALSE;TRUE;TRUE;FALSE;BIDI INDUSTRIES;;;fr;229;info@bidi-industries.fr;+229 23 43 56 87;+229 65 54 67 53;emailpaper;6;2;SME;XOF;;;1;411100;401100;;2;1;17;8;3;2;;img//partner/132_120px.png;2
+133;2;TRUE;FALSE;FALSE;FALSE;BOSSOU;Luc;1;fr;229;l.bossou@bidi-industries.fr;+229 23 45 78 09;+229 97 56 78 64;;;;;;;;1;;;132;;;;;;;;img//partner/1033_128px.png;1
+134;2;TRUE;FALSE;FALSE;FALSE;VLAVONOU;Marc;2;fr;229;m.vlavonoui@bidi-industries.fr;+229 23 54 77 90;+229 96 46 67 04;;;;;;;;1;;;132;;;;;;;;img//partner/1012_128px.png;2
+135;2;TRUE;FALSE;FALSE;FALSE;ASSOGBA;Jean Nicolas;1;fr;229;j.assogba@bidi-industries.fr;+229 23 43 56 78;+229 97 56 78 46;;;;;;;;1;;;132;;;;;;;;img//partner/1033_128px.png;1
+136;1;FALSE;TRUE;TRUE;FALSE;ESL Banking;;;fr;229;contact@esl-banking.fr;+331.38.33.50.99;;emailpaper;6;2;SME;EUR;;;1;411100;401100;;2;1;2;8;3;5;;img//partner/136_120px.png;2
+137;2;TRUE;FALSE;FALSE;FALSE;GUILLOT;Kevin;1;fr;229;k.guillot@esl-banking.fr;+331.73.34.26.99;+336.63.55.39.99;;;;;;;;1;;;136;;;;;;;;img//partner/1033_128px.png;1
+138;2;TRUE;FALSE;FALSE;FALSE;NOEL;Joel;1;fr;229;j.noel@esl-banking.fr;+331.13.96.92.99;+337.44.77.73.99;;;;;;;;1;;;136;;;;;;;;img//partner/1033_128px.png;2
+139;2;TRUE;FALSE;FALSE;FALSE;MEUNIER;Patrick;1;fr;229;p.meunier@esl-banking.fr;+331.22.82.15.99;+337.67.21.50.99;;;;;;;;1;;;136;;;;;;;;img//partner/1033_128px.png;1
+148;1;FALSE;TRUE;TRUE;FALSE;TOP Components;;;en;229;contact@top-components.com;+229 23 14 56 41 ;+229 65 64 89 09;emailpaper;8;5;SME;EUR;;;1;411100;401100;;1;2;9;;;5;2;img//partner/148_128px.png;2
+149;2;TRUE;FALSE;FALSE;FALSE;ZOKOU;Ulrich;2;en;229;u.zokou@top-components.com;+229 23 41 34 56 ;+229 65 53 87 90;;;;;;;;1;;;148;;;;;;;;img//partner/1012_128px.png;1
+152;1;FALSE;TRUE;TRUE;FALSE;SILVER Electronics;;;en;229;contact@silverelec.com;+229 23 84 78 09;+229 66 76 56 78;emailpaper;8;5;SME;XOF;;;1;411100;401100;;1;2;9;;;2;2;img//partner/152_128px.png;2
+153;2;TRUE;FALSE;FALSE;FALSE;KOUKPAKI;Paul;1;en;229;p.koukpaki@silverelec.com;+229 23 45 00 98;+229 66 56 78 90;;;;;;;;1;;;152;;;;;;;;img//partner/1033_128px.png;1
+170;1;FALSE;TRUE;TRUE;FALSE;SASAKI CORPORATE SARL;;;en;229;info@sasaki-components.com;+229 23 53 67 89;+229 63 52 56 78;emailpaper;8;5;SME;XOF;;;1;411100;401100;;1;2;16;;;12;2;img//partner/170_128px.png;2
+171;2;TRUE;FALSE;FALSE;FALSE;SASAKI;Alain;1;en;229;a.sasaki@sasaki-components.com;+229 23 43 56 89;+229 64 53 67 90;;;;;;;;1;;;170;;;;;;;;img//partner/1012_128px.png;1
+185;1;FALSE;TRUE;TRUE;FALSE;ETS DEKIMPE Engineering;;;en;229;contact@dekimpe-eng.com;+229 23 43 53 67;+229 64 35 67 89;emailpaper;8;5;SME;XOF;;;1;411100;401100;;1;2;3;;;8;1;img//partner/185_120px.png;2
+186;2;TRUE;FALSE;FALSE;FALSE;KOUSSAKOU;Jules;1;en;229;j.koussakou@dekimpe-eng.com;+229 23 43 56 78;+229 66 09 90 48;;;;;;;;1;;;185;;;;;;;;img//partner/1033_128px.png;1
+197;1;FALSE;TRUE;TRUE;FALSE;DG Technologies;;;en;229;info@dg-technologies.com;+229 23 00 98 78;+229 66 54 67 78;emailpaper;8;5;SME;EUR;;;1;411100;401100;;2;1;16;13;3;10;1;img//partner/197_120px.png;2
+198;2;TRUE;FALSE;FALSE;FALSE;TROUKOU;Marthe;1;en;229;m.troukou@dg-technologies.com;+229 23 41 54 67;+229 67 46 78 94;;;;;;;;1;;;197;;;;;;;;img//partner/1033_128px.png;1
+205;1;FALSE;TRUE;TRUE;FALSE;AZ Inno SARL;;;en;229;info@azinno.com;+229 23 53 44 57;+229 67 64 77 90;emailpaper;8;5;SME;XOF;;;1;411100;401100;;2;1;7;13;3;1;1;img//partner/205_120px.png;2
+206;2;TRUE;FALSE;FALSE;FALSE;ISSA ;Dorcas;1;en;229;d.issa@azinno.com;+229 23 41 45 67;+229 67 46 73 89;;;;;;;;1;;;205;;;;;;;;img//partner/1033_128px.png;1
+224;1;FALSE;TRUE;TRUE;FALSE;ETS WM Cinetics;;;en;229;contact@wm-cinetics.com;+229 23 04 90 90;+229 65 46 78 49;emailpaper;8;5;SME;XOF;;;1;411100;401100;;2;1;17;13;3;6;2;img//partner/224_128px.png;2
+225;2;TRUE;FALSE;FALSE;FALSE;BANKOLE;Charles;1;en;229;c.bankole@wm-cinetics.com;+229 23 45 74 89;+229 66 48 78 49;;;;;;;;1;;;224;;;;;;;;img//partner/1033_128px.png;1
+237;1;FALSE;TRUE;TRUE;FALSE;TGM Consulting;;;fr;229;info@tgm-consulting.com;+229 23 43 56 78;+229 90 74 46 78;emailpaper;8;5;SME;XOF;;;1;411100;401100;;1;2;13;8;3;7;2;img//partner/237_128px.png;2
+238;2;TRUE;FALSE;FALSE;FALSE;KPETERE;Kenneth;1;en;229;k.kpetere@tgm-consulting.com;+229 23 43 56 88;+229 95 64 78 90;;;;;;;;1;;;237;;;;;;;;img//partner/1033_128px.png;1
+239;2;TRUE;FALSE;FALSE;FALSE;ADDA;Steven;1;en;229;s.adda@tgm-consulting.com;+229 23 00 98 78;+229 94 56 78 00;;;;;;;;1;;;237;;;;;;;;img//partner/1033_128px.png;2
+240;2;TRUE;FALSE;FALSE;FALSE;ADAMBI;Edward;1;en;229;e.adambi@tgm-consulting.com;+229 23 43 45 67;+229 95 64 78 90;;;;;;;;1;;;237;;;;;;;;img//partner/1033_128px.png;1
+1012;2;FALSE;TRUE;TRUE;FALSE;M'PO;Georges;2;fr;229;g.mpo@msn.com;+229 23 09 89 66;+229 96 54 78 90;email;4;2;INDIV;XOF;;;1;411100;401100;;2;;;9;1;8;;img//partner/1012_128px.png;2
+1033;2;FALSE;TRUE;TRUE;FALSE;GNAMOU;Philippe;1;fr;229;p.gnamou@yahoo.com;+229 23 43 56 78;+229 96 35 67 63 ;email;5;2;INDIV;XOF;;;1;411100;401100;;2;;;8;3;9;;img//partner/1033_128px.png;1
+1039;2;FALSE;TRUE;TRUE;FALSE;TAMOU;Sandra;2;en;229;s.tamou@yahoo.com;+229 23 34 35 67 ;+229 96 67 84 90;email;8;5;INDIV;XOF;;;1;411100;401100;;2;;;13;3;12;2;img//partner/1039_128px.png;2
+1045;2;FALSE;TRUE;TRUE;FALSE;PADONOU;Laura;2;en;229;l.padonou@msn.com;+229 23 43 56 87;+229 96 67 88 04;email;8;5;INDIV;XOF;;;1;411100;401100;;2;;;13;3;11;2;img//partner/1045_128px.png;1
+90000;1;FALSE;TRUE;TRUE;FALSE;KONTA;;;fr;229;hello@konta.xyz;+229 23 43 60 98;+229 96 45 67 48;emailpaper;6;6;SME;XOF;;;1;411100;401100;;1;1;;;;;;img//partner/90000_128px.png;2
+90001;2;TRUE;FALSE;FALSE;TRUE;AVALLA;Urbain;1;fr;229;u.avalla@konta.xyz;+229 23 41 12 34;+229 97 78 98 89;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;1
+90002;2;TRUE;FALSE;FALSE;TRUE;HODE;Luc;2;fr;229;l.hode@konta.xyz;+229 23 41 32 56;+229 95 46 78 94;;;;;;;;1;;;90000;;;;;;;;img//partner/1012_128px.png;2
+90003;2;TRUE;FALSE;FALSE;TRUE;DJATCHI;Damien;1;fr;229;d.djatchi@konta.xyz;+229 23 14 56 78 ;+229 95 46 74 90;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;1
+90004;2;TRUE;FALSE;FALSE;TRUE;SONOU;Daniel;1;fr;229;d.sonou@konta.xyz;+229 23 43 56 67;+229 94 36 37 89;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;2
+90005;2;TRUE;FALSE;FALSE;TRUE;Da-COSTA;Charles;1;fr;229;c.dacosta@konta.xyz;+229 23 00 99 88;+229 97 89 09 87;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;1
+90006;2;TRUE;FALSE;FALSE;TRUE;BOUKARY;Kevin;1;fr;229;k.boukary@konta.xyz;+229 23 42 56 54 ;+229 96 35 63 78;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;2
+90007;2;TRUE;FALSE;FALSE;TRUE;DJARA;Charles;1;fr;229;c.djara@konta.xyz;+229 23 53 46 78;+229 96 37 83 90;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;1
+90008;2;TRUE;FALSE;FALSE;TRUE;ZOUMAROU;Esther;1;fr;229;e.zoumarou@konta.xyz;+229 23 98 90 98;+229 97 36 78 39;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;2
+90009;2;TRUE;FALSE;FALSE;TRUE;KORA;Thomas;1;fr;229;t.kora@konta.xyz;+229 23 15 61 35;+229 97 54 63 73;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;1
+90010;2;TRUE;FALSE;FALSE;TRUE;YAYI;Pulchérie;2;fr;229;p.yayi@konta.xyz;+229 23 14 656 82 ;+229 96 75 89 90;;;;;;;;1;;;90000;;;;;;;;img//partner/1012_128px.png;2
+90011;2;TRUE;FALSE;FALSE;TRUE;M'PO;Tantchonta;1;fr;229;t.mpo@konta.xyz;+229 23 91 80 43;+229 95 46 73 89;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;1
+90012;2;TRUE;FALSE;FALSE;TRUE;KOUNOUDJI;Alex;1;fr;229;a.kounoudji@konta.xyz;+229 23 14 24 56;+229 96 46 73 89;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;2
+90013;2;TRUE;FALSE;FALSE;TRUE;ZINSOU;William;1;fr;229;w.zinsou@konta.xyz;+229 23 41 52 67 ;+229 96 45 63 78;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;1
+90014;2;TRUE;FALSE;FALSE;TRUE;ELEGBE;David;1;fr;229;d.elegbe@konta.xyz;+229 23 43 53 63;+229 97 67 84 63;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;2
+90015;2;TRUE;FALSE;FALSE;TRUE;ADJAVON ;Cyril;1;fr;229;c.adjavon@konta.xyz;+229 23 41 09 89;+229 94 63 66 90;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;1
+90016;2;TRUE;FALSE;FALSE;TRUE;BASSAOU;Rufin;1;fr;229;r.bassaou@konta.xyz;+229 23 42 56 27;+229 95 46 78 09;;;;;;;;1;;;90000;;;;;;;;img//partner/1033_128px.png;2
+90017;2;TRUE;FALSE;FALSE;TRUE;AITCHEDJI;Grace;2;fr;229;g.aitchedji@konta.xyz;+229 23 41 45 16 ;+229 95 46 78 43;;;;;;;;1;;;90000;;;;;;;;img//partner/1012_128px.png;1
+90018;2;TRUE;FALSE;FALSE;TRUE;AIVO;Victoria;2;fr;229;v.aivo@konta.xyz;+229 23 41 52 09;+229 99 88 77 55;;;;;;;;1;;;90000;;;;;;;;img//partner/1012_128px.png;2
+90019;2;TRUE;FALSE;FALSE;FALSE;Admin;;2;fr;229;;+229 23 42 52 67;+229 95 67 46 53;;;;;;;;1;;;;;;;;;;;img/partner/1012_128px.png;2
+90020;2;TRUE;FALSE;FALSE;FALSE;Demo;;2;fr;229;;+229 23 44 55 66;+229 97 46 78 98;;;;;;;;1;;;;;;;;;;;img/partner/1012_128px.png;2
+90021;1;FALSE;FALSE;FALSE;FALSE;IFactor;IFactor;;fr;229;info@ifactor.com;+229 23 11 22 33;+229 95 74 89 46;emailpaper;8;6;SME;XOF;;;1;411100;401100;;3;1;22;11;2;7;;;

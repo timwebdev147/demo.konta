@@ -58,12 +58,12 @@ deploy:
     #Add ssh key to the agent.
     - ssh-add <(echo "$PRIVATE_KEY_DEVELOP")
     # Move and copy konta-erp-2.0.0.war  in tomcat
-    - scp -r -p /builds/konta/erp/build/libs/axelor-erp-6.0.31.war kontauser@20.235.122.255:/tmp
+    - scp -r -p /builds/konta/erp/build/libs/konta-6.0.31.war kontauser@20.235.122.255:/tmp
     # Update the machine and create the archive_konta folder
     #    - ssh red@104.154.232.34 " sudo apt-get update && sudo apt-get upgrade && sudo mkdir /opt/tomcat/archive_konta"
     # Shut down tomcat; move ROOT to archive_konta; delete ROOT folder; move, rename, right konta-erp to ROOT and finally restart tomcat
     #    - echo "$CI_JOB_STAGE"
-    - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo mv /opt/tomcat/webapps/ROOT.war /opt/tomcat/archive_konta/`date +%s`_ROOT.war && sudo rm -r /opt/tomcat/webapps/ROOT && sudo mv /tmp/axelor-erp-6.0.31.war /opt/tomcat/webapps/ROOT.war && sudo chmod 755 /opt/tomcat/webapps/ROOT.war && sudo /opt/tomcat/bin/startup.sh && sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
+    - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo mv /opt/tomcat/webapps/ROOT.war /opt/tomcat/archive_konta/`date +%s`_ROOT.war && sudo rm -r /opt/tomcat/webapps/ROOT && sudo mv /tmp/konta-6.0.31.war /opt/tomcat/webapps/ROOT.war && sudo chmod 755 /opt/tomcat/webapps/ROOT.war && sudo /opt/tomcat/bin/startup.sh && sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
     #shutdown and start tomcat
     - ssh kontauser@20.235.122.255 "sudo /opt/tomcat/bin/shutdown.sh && sudo /opt/tomcat/bin/startup.sh"
     #only:
