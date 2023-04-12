@@ -17,6 +17,8 @@
  */
 package com.axelor.apps.account.service.invoice;
 
+import com.axelor.apps.account.db.*;
+import com.axelor.apps.account.db.repo.*;
 import com.axelor.apps.account.db.Account;
 import com.axelor.apps.account.db.AccountConfig;
 import com.axelor.apps.account.db.AccountingSituation;
@@ -84,9 +86,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import okhttp3.OkHttpClient;
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import wslite.json.JSONException;
+import com.axelor.apps.account.service.invoice.emcf.EmcfCore;
+import com.axelor.apps.account.service.invoice.emcf.EmcfInvoice;
 
 /** InvoiceService est une classe implémentant l'ensemble des services de facturation. */
 public class InvoiceServiceImpl extends InvoiceRepository implements InvoiceService {
@@ -325,6 +331,100 @@ public class InvoiceServiceImpl extends InvoiceRepository implements InvoiceServ
               InvoiceRepository.REPORT_TYPE_ORIGINAL_INVOICE,
               ReportSettings.FORMAT_PDF,
               null);
+    }
+  }
+
+
+  /**
+   * Normalisation EMECF comptable d'une facture. (Transaction)
+   *
+   * @param invoice Une facture.
+   * @throws AxelorException
+   */
+  @Override
+  @Transactional(rollbackOn = {Exception.class})
+  public void normalize(Invoice invoice) throws AxelorException, JSONException {
+
+    log.debug("Normalisation de la facture {}", invoice.getInvoiceId());
+
+    String emcfId;
+    Company user = null;
+    OkHttpClient emcfClient = new OkHttpClient();
+    EmcfCore emcfCore = new EmcfCore(user, invoice, emcfClient);
+    EmcfInvoice normalizeInvoice = new EmcfInvoice(emcfCore);
+    String emcfToken = emcfCore.emcfUserToken();
+    log.debug(emcfToken);
+    InvoiceEmcf invoiceEmcf = new InvoiceEmcf();
+    InvoiceEmcfRepository invoiceEmcfRepository = new InvoiceEmcfRepository();
+    try {
+      invoiceEmcf.setStandardizedInvoice(invoice);
+      String emcfsubmit = normalizeInvoice.emcfSubmit(emcfToken);
+      invoiceEmcf.setEmcfUid(emcfsubmit);
+      if (invoice.getOperationTypeSelect() == 4) {
+        log.debug(emcfCore.emcfReference());
+        invoiceEmcf.setEmcfReference(emcfCore.emcfReference());
+      }
+      invoiceEmcf.setSubmitResponse(normalizeInvoice.getEmcfSubmitInvoice());
+      String emcfconfirm = normalizeInvoice.emcfConfirm(emcfToken);
+      // invoice.setImportId(emcfconfirm);
+      invoiceEmcf.setConfirmResponse(emcfconfirm);
+      log.debug("//////=================++++++" + invoiceEmcf.getConfirmResponse());
+      String qrCodePath = normalizeInvoice.emcfQrcode(invoice);
+      // invoice.setImportOrigin(qrCodePath);
+      invoiceEmcf.setQrCodePath(qrCodePath);
+      invoiceEmcfRepository.save(invoiceEmcf);
+    } catch (JSONException e) {
+      e.printStackTrace();
+    }
+    /*Repetition de la fonction ventillate avec la modification pour la version de facture normale*/
+    if (invoice.getPaymentCondition() == null) {
+      throw new AxelorException(
+              TraceBackRepository.CATEGORY_MISSING_FIELD,
+              I18n.get(IExceptionMessage.INVOICE_GENERATOR_3),
+              I18n.get(com.axelor.apps.base.exceptions.IExceptionMessage.EXCEPTION));
+    }
+    if (invoice.getPaymentMode() == null) {
+      throw new AxelorException(
+              TraceBackRepository.CATEGORY_MISSING_FIELD,
+              I18n.get(IExceptionMessage.INVOICE_GENERATOR_4),
+              I18n.get(com.axelor.apps.base.exceptions.IExceptionMessage.EXCEPTION));
+    }
+    for (InvoiceLine invoiceLine : invoice.getInvoiceLineList()) {
+      Account account = invoiceLine.getAccount();
+
+      if (invoiceLine.getAccount() == null
+              && (invoiceLine.getTypeSelect() == InvoiceLineRepository.TYPE_NORMAL)) {
+        throw new AxelorException(
+                invoice,
+                TraceBackRepository.CATEGORY_MISSING_FIELD,
+                I18n.get(IExceptionMessage.VENTILATE_STATE_6),
+                invoiceLine.getProductName());
+      }
+
+      if (account != null
+              && !account.getAnalyticDistributionAuthorized()
+              && (invoiceLine.getAnalyticDistributionTemplate() != null
+              || (invoiceLine.getAnalyticMoveLineList() != null
+              && !invoiceLine.getAnalyticMoveLineList().isEmpty()))) {
+        throw new AxelorException(
+                invoice,
+                TraceBackRepository.CATEGORY_CONFIGURATION_ERROR,
+                I18n.get(IExceptionMessage.VENTILATE_STATE_7));
+      }
+    }
+
+    log.debug("Ventilation de la facture {}", invoice.getInvoiceId());
+
+    ventilateFactory.getVentilator(invoice).process();
+
+    invoiceRepo.save(invoice);
+    if (this.checkEnablePDFGenerationOnVentilation(invoice)) {
+      Beans.get(InvoicePrintService.class)
+              .printAndSaveNormalInvoice(
+                      invoice,
+                      InvoiceRepository.REPORT_TYPE_ORIGINAL_INVOICE,
+                      ReportSettings.FORMAT_PDF,
+                      null);
     }
   }
 

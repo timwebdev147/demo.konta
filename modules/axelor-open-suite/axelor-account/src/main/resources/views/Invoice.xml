@@ -666,6 +666,9 @@ InvoiceSet.length > 0))"
         showIf="statusSelect == 2 &amp;&amp; operationSubTypeSelect != 2"
         onClick="save,action-invoice-method-check-not-lettered-advance-payment-move-lines,action-invoice-method-check-not-imputed-refunds,action-invoice-method-ventilate,save"
         prompt="Are you sure you want to ventilate the invoice ?"/>
+
+      <button name="normalizeBtn" hidden="true" title="Normalize" showIf="statusSelect == 2 &amp;&amp; operationSubTypeSelect != 2 &amp;&amp; (operationTypeSelect == 3 || operationTypeSelect == 4)" onClick="save,action-invoice-method-check-not-lettered-advance-payment-move-lines,action-invoice-method-check-not-imputed-refunds,action-invoice-method-normalize,save" prompt="Are you sure you want to normalize the invoice ?"/>
+
       <button name="validateAndVentilateBtn" hidden="true" title="Validate"
         onClick="save,action-validate-invoice-ckeck-invoice-line-tax-list,action-validate-invoice-ckeck-invoice-line-tax-list,action-invoice-method-check-not-lettered-advance-payment-move-lines,action-invoice-method-check-not-imputed-refunds,action-invoice-method-validate-and-ventilate"/>
       <button name="passedForPaymentValidationBtn" css="btn-success"
@@ -967,6 +970,9 @@ InvoiceSet.length > 0))"
       <button name="ventilateBtn" title="Ventilate" showIf="statusSelect == 2"
         onClick="save,action-invoice-method-ventilate,save"
         prompt="Are you sure you want to ventilate the invoice ?"/>
+
+      <button name="normalizeBtn" hidden="true" title="Normalize" showIf="statusSelect == 2 &amp;&amp; operationSubTypeSelect != 2 &amp;&amp; (operationTypeSelect == 3 || operationTypeSelect == 4)" onClick="save,action-invoice-method-check-not-lettered-advance-payment-move-lines,action-invoice-method-check-not-imputed-refunds,action-invoice-method-normalize,save" prompt="Are you sure you want to normalize the invoice ?"/>
+
       <button name="cancelBtn" title="Cancel"
         onClick="save,action-invoice-method-cancel,save"
         prompt="Are you sure you want to cancel the invoice ?"/>
@@ -1652,6 +1658,10 @@ InvoiceSet.length > 0))"
 
   <action-method name="action-invoice-method-ventilate">
     <call class="com.axelor.apps.account.web.InvoiceController" method="ventilate"/>
+  </action-method>
+
+  <action-method name="action-invoice-method-normalize">
+    <call class="com.axelor.apps.account.web.InvoiceController" method="normalize"/>
   </action-method>
 
   <action-method name="action-invoice-method-validate-and-ventilate">

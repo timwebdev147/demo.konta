@@ -395,6 +395,7 @@
           <panel name="otherPartnerDetailsPanel">
             <field name="saleTurnover" hideIf="partnerTypeSelect== 2"/>
             <field name="nbrEmployees" hideIf="partnerTypeSelect== 2"/>
+            <field name="ifu" hideIf="partnerTypeSelect== 2"/>
             <field name="registrationCode" hideIf="partnerTypeSelect== 2"/>
             <field name="mainActivityCode" hideIf="partnerTypeSelect== 2"/>
             <field name="taxNbr" hideIf="partnerTypeSelect== 2"/>

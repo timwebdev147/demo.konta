@@ -6,6 +6,8 @@
   <grid name="company-grid" title="Companies" model="com.axelor.apps.base.db.Company">
     <field name="name"/>
     <field name="code" x-bind="{{code|unaccent|uppercase}}"/>
+    <field name="ifu"/>
+    <field name="rccm" x-bind="{{rccm|unaccent|uppercase}}"/>
     <field name="address" form-view="address-form" grid-view="address-grid"/>
   </grid>
 
@@ -35,9 +37,13 @@
       <panel name="detailsPanel" colSpan="8">
         <field name="name"/>
         <field name="code" x-bind="{{code|unaccent|uppercase}}"/>
+        <field name="ifu"/>
+        <field name="rccm" x-bind="{{rccm|unaccent|uppercase}}" placeholder="XXXXXXXXXXXXX"/>
         <field name="parent" form-view="company-form" grid-view="company-grid"/>
         <field name="partner" canNew="true" domain="self.isContact = false"
           form-view="partner-form" grid-view="partner-grid"/>
+        <field name="emcfToken" colSpan="12" title="Clé EMECF"/>
+        <field name="taxRegime" title="Régime fiscal" selection="company.taxregime.select"/> <!--TPS ou Regime reel : il varie en fonction du niveau de l'entreprise : grande et moyenne puis petite et micro-->
         <field name="address" canNew="true" colSpan="12" form-view="address-form"
           grid-view="address-grid"/>
       </panel>

@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.apache.commons.lang3.tuple.Pair;
+import wslite.json.JSONException;
 
 /** InvoiceService est une classe implémentant l'ensemble des services de facturations. */
 public interface InvoiceService {
@@ -105,6 +106,15 @@ public interface InvoiceService {
    * @throws AxelorException
    */
   public void ventilate(Invoice invoice) throws AxelorException;
+
+
+  /**
+   * Normalisation d'une facture. (Transaction)
+   *
+   * @param invoice Une facture.
+   * @throws AxelorException
+   */
+  public void normalize(Invoice invoice) throws AxelorException, JSONException;
 
   /**
    * Validate and ventilate an invoice.

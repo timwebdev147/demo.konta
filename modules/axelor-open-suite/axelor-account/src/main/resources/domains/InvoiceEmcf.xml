@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.3.xsd">
+
+    <module name="account" package="com.axelor.apps.account.db"/>
+
+    <entity sequential="true" name="InvoiceEmcf" lang="java">
+        <!--HEADER-->
+        <string name="emcfId" namecolumn="true" title="Emcf N°" readonly="true"/>
+
+        <!--InvoiceResponseDataDto information-->
+        <string name="submitResponse" title="Submission" json="true"/>
+        
+        <!--Uid de la facture-->
+        <string name="emcfUid" title="Uid"/>
+        
+        <!--Normalize information-->
+        <string name="confirmResponse" title="Confirmation"/>
+
+        <!--Qrcode information-->
+        <string name="qrCodePath" title="QrCodePath"/>
+
+        <!--EmcfReference information facture avoir-->
+        <string name="emcfReference" title="EmcfReference"/>
+
+        <!--Invoice information-->
+        <one-to-one name="standardizedInvoice" ref="com.axelor.apps.account.db.Invoice" title="Standardized Invoice"/>
+    </entity>
+
+</domain-models>

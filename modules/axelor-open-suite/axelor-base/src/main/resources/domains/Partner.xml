@@ -51,6 +51,7 @@
     <string name="fax" title="Fax"/>
     <string name="fixedPhone" title="Fixed phone"/>
     <string name="mobilePhone" title="Mobile phone"/>
+    <string name="ifu" title="Ifu"/>
     <string name="webSite" title="Website"/>
 
     <string name="department" title="Dept./Div."/>

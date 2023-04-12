@@ -133,6 +133,7 @@
 
     <!-- Json field -->
     <string name="productAttrs" title="Fields" json="true"/>
+    <string name="taxGroup" title="Groupe de taxe"/>
 
     <unique-constraint columns="product,company"/>
 
@@ -187,6 +188,7 @@
       <field name="warrantyNbrOfMonths"/>
       <field name="isPerishable"/>
       <field name="perishableNbrOfMonths"/>
+      <field name="taxGroup"/>
       <message if="true" on="UPDATE">Product updated</message>
     </track>
   </entity>

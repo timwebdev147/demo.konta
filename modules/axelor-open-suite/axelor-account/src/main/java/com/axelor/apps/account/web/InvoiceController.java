@@ -169,6 +169,43 @@ public class InvoiceController {
     }
   }
 
+
+  /*
+   * Fonction appeler par le bouton normaliser
+   * @param request
+   * @param response
+   * @return
+   * @throws AxelorException
+   */
+  public void normalize(ActionRequest request, ActionResponse response) throws AxelorException {
+
+    Invoice invoice = request.getContext().asType(Invoice.class);
+    invoice = Beans.get(InvoiceRepository.class).find(invoice.getId());
+
+    try {
+      // we have to inject TraceBackService to use non static methods
+      TraceBackService traceBackService = Beans.get(TraceBackService.class);
+      long tracebackCount = traceBackService.countMessageTraceBack(invoice);
+      Beans.get(InvoiceService.class).normalize(invoice);
+      response.setReload(true);
+      if (traceBackService.countMessageTraceBack(invoice) > tracebackCount) {
+        traceBackService
+                .findLastMessageTraceBack(invoice)
+                .ifPresent(
+                        traceback ->
+                                response.setNotify(
+                                        String.format(
+                                                I18n.get(
+                                                        com.axelor.apps.message.exception.IExceptionMessage
+                                                                .SEND_EMAIL_EXCEPTION),
+                                                traceback.getMessage())));
+      }
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
+  }
+
+
   /**
    * Called by the validate button, if the ventilation is skipped in invoice config
    *
