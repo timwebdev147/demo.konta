@@ -59,7 +59,7 @@ String warningAdblock2 = T.apply("Please disable the adblocker as it may slow do
 String loginWith = T.apply("Log in with %s");
 
 int year = Calendar.getInstance().get(Calendar.YEAR);
-String copyright = String.format("&copy; 2005 - %s Pivotech. All Rights Reserved.", year);
+String copyright = String.format("&copy; 2020 - %s Pivotech. All Rights Reserved.", year);
 
 String loginHeader = "/login-header.jsp";
 if (pageContext.getServletContext().getResource(loginHeader) == null) {
