@@ -43,7 +43,8 @@
         <field name="partner" canNew="true" domain="self.isContact = false"
           form-view="partner-form" grid-view="partner-grid"/>
         <field name="emcfToken" colSpan="12" title="Clé EMECF"/>
-        <field name="taxRegime" title="Régime fiscal" selection="company.taxregime.select"/> <!--TPS ou Regime reel : il varie en fonction du niveau de l'entreprise : grande et moyenne puis petite et micro-->
+        <field name="taxRegime" title="Régime fiscal" selection="company.taxregime.select"/> <!--TPS ou Regime reel : il varie en fonction du niveau de l'entreprise : grande et moyenne puis petite
+          et micro -->
         <field name="address" canNew="true" colSpan="12" form-view="address-form"
           grid-view="address-grid"/>
       </panel>

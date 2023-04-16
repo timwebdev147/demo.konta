@@ -169,7 +169,6 @@ public class InvoiceController {
     }
   }
 
-
   /*
    * Fonction appeler par le bouton normaliser
    * @param request
@@ -190,21 +189,20 @@ public class InvoiceController {
       response.setReload(true);
       if (traceBackService.countMessageTraceBack(invoice) > tracebackCount) {
         traceBackService
-                .findLastMessageTraceBack(invoice)
-                .ifPresent(
-                        traceback ->
-                                response.setNotify(
-                                        String.format(
-                                                I18n.get(
-                                                        com.axelor.apps.message.exception.IExceptionMessage
-                                                                .SEND_EMAIL_EXCEPTION),
-                                                traceback.getMessage())));
+            .findLastMessageTraceBack(invoice)
+            .ifPresent(
+                traceback ->
+                    response.setNotify(
+                        String.format(
+                            I18n.get(
+                                com.axelor.apps.message.exception.IExceptionMessage
+                                    .SEND_EMAIL_EXCEPTION),
+                            traceback.getMessage())));
       }
     } catch (Exception e) {
       TraceBackService.trace(response, e);
     }
   }
-
 
   /**
    * Called by the validate button, if the ventilation is skipped in invoice config

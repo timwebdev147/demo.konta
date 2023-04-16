@@ -10,7 +10,8 @@
     <string name="code" title="Code" required="true" unique="true"/>
     <string name="ifu" title="Ifu"/>
     <string name="rccm" title="Rccm"/>
-    <string name="taxRegime" title="Tax Regime"/> <!--TPS ou Regime reel : il varie en fonction du niveau de l'entreprise : grande et moyenne puis petite et micro-->
+    <string name="taxRegime" title="Tax Regime"/> <!--TPS ou Regime reel : il varie en fonction du niveau de l'entreprise : grande et moyenne puis petite
+      et micro -->
     <string name="emcfToken" title="Emcf Token" large="true"/>
     <many-to-one name="address" ref="Address" title="Address" massUpdate="true"/>  <!-- A supprimer si Partner sur company -->
 
