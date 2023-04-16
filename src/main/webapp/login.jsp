@@ -1,6 +1,6 @@
 <%--
 
-    Axelor Business Solutions
+    Konta Business Solutions
 
     Copyright (C) 2005-2021 Axelor (<http://axelor.com>).
 
