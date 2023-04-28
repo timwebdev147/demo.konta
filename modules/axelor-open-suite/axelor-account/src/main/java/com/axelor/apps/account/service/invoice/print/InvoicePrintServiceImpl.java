@@ -65,10 +65,10 @@ public class InvoicePrintServiceImpl implements InvoicePrintService {
 
   @Override
   public File printAndSaveNormalInvoice(
-          Invoice invoice, Integer reportType, String format, String locale) throws AxelorException {
+      Invoice invoice, Integer reportType, String format, String locale) throws AxelorException {
 
     ReportSettings reportSettings =
-            prepareReportSettingsNormalInvoice(invoice, reportType, format, locale);
+        prepareReportSettingsNormalInvoice(invoice, reportType, format, locale);
     MetaFile metaFile;
 
     reportSettings.toAttach(invoice);
@@ -81,8 +81,8 @@ public class InvoicePrintServiceImpl implements InvoicePrintService {
       return MetaFiles.getPath(metaFile).toFile();
     } catch (IOException e) {
       throw new AxelorException(
-              TraceBackRepository.CATEGORY_CONFIGURATION_ERROR,
-              I18n.get(IExceptionMessage.INVOICE_PRINTING_IO_ERROR) + " " + e.getLocalizedMessage());
+          TraceBackRepository.CATEGORY_CONFIGURATION_ERROR,
+          I18n.get(IExceptionMessage.INVOICE_PRINTING_IO_ERROR) + " " + e.getLocalizedMessage());
     }
   }
 
@@ -283,14 +283,14 @@ public class InvoicePrintServiceImpl implements InvoicePrintService {
 
   @Override
   public ReportSettings prepareReportSettingsNormalInvoice(
-          Invoice invoice, Integer reportType, String format, String locale) throws AxelorException {
+      Invoice invoice, Integer reportType, String format, String locale) throws AxelorException {
     if (invoice.getPrintingSettings() == null) {
       throw new AxelorException(
-              TraceBackRepository.CATEGORY_MISSING_FIELD,
-              String.format(
-                      I18n.get(IExceptionMessage.INVOICE_MISSING_PRINTING_SETTINGS),
-                      invoice.getInvoiceId()),
-              invoice);
+          TraceBackRepository.CATEGORY_MISSING_FIELD,
+          String.format(
+              I18n.get(IExceptionMessage.INVOICE_MISSING_PRINTING_SETTINGS),
+              invoice.getInvoiceId()),
+          invoice);
     }
 
     String title = I18n.get(InvoiceToolService.isRefund(invoice) ? "Refund" : "Invoice");
@@ -299,43 +299,43 @@ public class InvoicePrintServiceImpl implements InvoicePrintService {
     }
 
     ReportSettings reportSetting =
-            ReportFactory.createReport(IReport.INVOICE, title + " - ${date}");
+        ReportFactory.createReport(IReport.INVOICE, title + " - ${date}");
 
     if (Strings.isNullOrEmpty(locale)) {
       String userLanguageCode =
-              Optional.ofNullable(AuthUtils.getUser()).map(User::getLanguage).orElse(null);
+          Optional.ofNullable(AuthUtils.getUser()).map(User::getLanguage).orElse(null);
       String companyLanguageCode =
-              invoice.getCompany().getLanguage() != null
-                      ? invoice.getCompany().getLanguage().getCode()
-                      : userLanguageCode;
+          invoice.getCompany().getLanguage() != null
+              ? invoice.getCompany().getLanguage().getCode()
+              : userLanguageCode;
       String partnerLanguageCode =
-              invoice.getPartner().getLanguage() != null
-                      ? invoice.getPartner().getLanguage().getCode()
-                      : userLanguageCode;
+          invoice.getPartner().getLanguage() != null
+              ? invoice.getPartner().getLanguage().getCode()
+              : userLanguageCode;
       locale =
-              accountConfigRepo
-                      .findByCompany(invoice.getCompany())
-                      .getIsPrintInvoicesInCompanyLanguage()
-                      ? companyLanguageCode
-                      : partnerLanguageCode;
+          accountConfigRepo
+                  .findByCompany(invoice.getCompany())
+                  .getIsPrintInvoicesInCompanyLanguage()
+              ? companyLanguageCode
+              : partnerLanguageCode;
     }
     String watermark = null;
     if (accountConfigRepo.findByCompany(invoice.getCompany()).getInvoiceWatermark() != null) {
       watermark =
-              MetaFiles.getPath(
-                      accountConfigRepo.findByCompany(invoice.getCompany()).getInvoiceWatermark())
-                      .toString();
+          MetaFiles.getPath(
+                  accountConfigRepo.findByCompany(invoice.getCompany()).getInvoiceWatermark())
+              .toString();
     }
 
     return reportSetting
-            .addParam("InvoiceId", invoice.getId())
-            .addParam("Locale", locale)
-            .addParam(
-                    "Timezone", invoice.getCompany() != null ? invoice.getCompany().getTimezone() : null)
-            .addParam("ReportType", reportType == null ? 0 : reportType)
-            .addParam("HeaderHeight", invoice.getPrintingSettings().getPdfHeaderHeight())
-            .addParam("Watermark", watermark)
-            .addParam("FooterHeight", invoice.getPrintingSettings().getPdfFooterHeight())
-            .addFormat(format);
+        .addParam("InvoiceId", invoice.getId())
+        .addParam("Locale", locale)
+        .addParam(
+            "Timezone", invoice.getCompany() != null ? invoice.getCompany().getTimezone() : null)
+        .addParam("ReportType", reportType == null ? 0 : reportType)
+        .addParam("HeaderHeight", invoice.getPrintingSettings().getPdfHeaderHeight())
+        .addParam("Watermark", watermark)
+        .addParam("FooterHeight", invoice.getPrintingSettings().getPdfFooterHeight())
+        .addFormat(format);
   }
 }

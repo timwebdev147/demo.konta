@@ -140,7 +140,8 @@
           <field name="expense" hidden="true" if-module="axelor-human-resource"/>
         </panel>
         <panel name="taxgroup" colSpan="12">
-          <field name="taxGroup" title="Groupe de Taxe" selection="product.taxgroup.select" colSpan="6" />
+          <field name="taxGroup" title="Groupe de Taxe" selection="product.taxgroup.select"
+            colSpan="6"/>
         </panel>
         <panel name="BarcodePanel" readonlyIf="barCode != null"
           if="__config__.app.getApp('base').getActivateBarCodeGeneration()" title="Barcode"
@@ -493,7 +494,7 @@
     <field name="salePrice" x-scale="2"/>
     <field name="saleCurrency.symbol"/>
     <field name="productFamily"/>
-    <field name="taxGroup" />
+    <field name="taxGroup"/>
     <field name="productCategory"/>
     <field name="internalDescription"/>
     <field name="configurator.id"/>
@@ -704,7 +705,8 @@
     <field name="isShippingCostsProduct" expr="eval: _isShippingCostsProduct"/>
   </action-record>
 
-  <action-record name="action-product-record-taxgroup" model="com.axelor.apps.base.db.Product">
+  <action-record name="action-product-record-taxgroup"
+    model="com.axelor.apps.base.db.Product">
     <field name="taxGroup" expr="eval: taxGroup"/>
   </action-record>
 

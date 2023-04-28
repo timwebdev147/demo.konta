@@ -18,7 +18,6 @@
 package com.axelor.apps.account.service.invoice;
 
 import com.axelor.apps.account.db.*;
-import com.axelor.apps.account.db.repo.*;
 import com.axelor.apps.account.db.Account;
 import com.axelor.apps.account.db.AccountConfig;
 import com.axelor.apps.account.db.AccountingSituation;
@@ -31,6 +30,7 @@ import com.axelor.apps.account.db.MoveLine;
 import com.axelor.apps.account.db.PaymentCondition;
 import com.axelor.apps.account.db.PaymentMode;
 import com.axelor.apps.account.db.SubstitutePfpValidator;
+import com.axelor.apps.account.db.repo.*;
 import com.axelor.apps.account.db.repo.AccountTypeRepository;
 import com.axelor.apps.account.db.repo.InvoiceLineRepository;
 import com.axelor.apps.account.db.repo.InvoiceRepository;
@@ -40,6 +40,8 @@ import com.axelor.apps.account.exception.IExceptionMessage;
 import com.axelor.apps.account.service.AccountingSituationService;
 import com.axelor.apps.account.service.app.AppAccountService;
 import com.axelor.apps.account.service.config.AccountConfigService;
+import com.axelor.apps.account.service.invoice.emcf.EmcfCore;
+import com.axelor.apps.account.service.invoice.emcf.EmcfInvoice;
 import com.axelor.apps.account.service.invoice.factory.CancelFactory;
 import com.axelor.apps.account.service.invoice.factory.ValidateFactory;
 import com.axelor.apps.account.service.invoice.factory.VentilateFactory;
@@ -91,8 +93,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import wslite.json.JSONException;
-import com.axelor.apps.account.service.invoice.emcf.EmcfCore;
-import com.axelor.apps.account.service.invoice.emcf.EmcfInvoice;
 
 /** InvoiceService est une classe implémentant l'ensemble des services de facturation. */
 public class InvoiceServiceImpl extends InvoiceRepository implements InvoiceService {
@@ -334,7 +334,6 @@ public class InvoiceServiceImpl extends InvoiceRepository implements InvoiceServ
     }
   }
 
-
   /**
    * Normalisation EMECF comptable d'une facture. (Transaction)
    *
@@ -379,37 +378,37 @@ public class InvoiceServiceImpl extends InvoiceRepository implements InvoiceServ
     /*Repetition de la fonction ventillate avec la modification pour la version de facture normale*/
     if (invoice.getPaymentCondition() == null) {
       throw new AxelorException(
-              TraceBackRepository.CATEGORY_MISSING_FIELD,
-              I18n.get(IExceptionMessage.INVOICE_GENERATOR_3),
-              I18n.get(com.axelor.apps.base.exceptions.IExceptionMessage.EXCEPTION));
+          TraceBackRepository.CATEGORY_MISSING_FIELD,
+          I18n.get(IExceptionMessage.INVOICE_GENERATOR_3),
+          I18n.get(com.axelor.apps.base.exceptions.IExceptionMessage.EXCEPTION));
     }
     if (invoice.getPaymentMode() == null) {
       throw new AxelorException(
-              TraceBackRepository.CATEGORY_MISSING_FIELD,
-              I18n.get(IExceptionMessage.INVOICE_GENERATOR_4),
-              I18n.get(com.axelor.apps.base.exceptions.IExceptionMessage.EXCEPTION));
+          TraceBackRepository.CATEGORY_MISSING_FIELD,
+          I18n.get(IExceptionMessage.INVOICE_GENERATOR_4),
+          I18n.get(com.axelor.apps.base.exceptions.IExceptionMessage.EXCEPTION));
     }
     for (InvoiceLine invoiceLine : invoice.getInvoiceLineList()) {
       Account account = invoiceLine.getAccount();
 
       if (invoiceLine.getAccount() == null
-              && (invoiceLine.getTypeSelect() == InvoiceLineRepository.TYPE_NORMAL)) {
+          && (invoiceLine.getTypeSelect() == InvoiceLineRepository.TYPE_NORMAL)) {
         throw new AxelorException(
-                invoice,
-                TraceBackRepository.CATEGORY_MISSING_FIELD,
-                I18n.get(IExceptionMessage.VENTILATE_STATE_6),
-                invoiceLine.getProductName());
+            invoice,
+            TraceBackRepository.CATEGORY_MISSING_FIELD,
+            I18n.get(IExceptionMessage.VENTILATE_STATE_6),
+            invoiceLine.getProductName());
       }
 
       if (account != null
-              && !account.getAnalyticDistributionAuthorized()
-              && (invoiceLine.getAnalyticDistributionTemplate() != null
+          && !account.getAnalyticDistributionAuthorized()
+          && (invoiceLine.getAnalyticDistributionTemplate() != null
               || (invoiceLine.getAnalyticMoveLineList() != null
-              && !invoiceLine.getAnalyticMoveLineList().isEmpty()))) {
+                  && !invoiceLine.getAnalyticMoveLineList().isEmpty()))) {
         throw new AxelorException(
-                invoice,
-                TraceBackRepository.CATEGORY_CONFIGURATION_ERROR,
-                I18n.get(IExceptionMessage.VENTILATE_STATE_7));
+            invoice,
+            TraceBackRepository.CATEGORY_CONFIGURATION_ERROR,
+            I18n.get(IExceptionMessage.VENTILATE_STATE_7));
       }
     }
 
@@ -420,11 +419,11 @@ public class InvoiceServiceImpl extends InvoiceRepository implements InvoiceServ
     invoiceRepo.save(invoice);
     if (this.checkEnablePDFGenerationOnVentilation(invoice)) {
       Beans.get(InvoicePrintService.class)
-              .printAndSaveNormalInvoice(
-                      invoice,
-                      InvoiceRepository.REPORT_TYPE_ORIGINAL_INVOICE,
-                      ReportSettings.FORMAT_PDF,
-                      null);
+          .printAndSaveNormalInvoice(
+              invoice,
+              InvoiceRepository.REPORT_TYPE_ORIGINAL_INVOICE,
+              ReportSettings.FORMAT_PDF,
+              null);
     }
   }
 

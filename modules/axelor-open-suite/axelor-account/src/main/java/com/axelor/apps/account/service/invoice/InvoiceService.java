@@ -107,7 +107,6 @@ public interface InvoiceService {
    */
   public void ventilate(Invoice invoice) throws AxelorException;
 
-
   /**
    * Normalisation d'une facture. (Transaction)
    *

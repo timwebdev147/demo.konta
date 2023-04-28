@@ -116,7 +116,7 @@ public interface InvoicePrintService {
    * @throws AxelorException
    */
   File printAndSaveNormalInvoice(Invoice invoice, Integer reportType, String format, String locale)
-          throws AxelorException;
+      throws AxelorException;
 
   /**
    * Print a list of invoices in the same output.
@@ -152,5 +152,5 @@ public interface InvoicePrintService {
    * @throws AxelorException
    */
   ReportSettings prepareReportSettingsNormalInvoice(
-          Invoice invoice, Integer reportType, String format, String locale) throws AxelorException;
+      Invoice invoice, Integer reportType, String format, String locale) throws AxelorException;
 }
